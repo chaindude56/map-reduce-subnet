@@ -120,7 +120,7 @@ def main( config ):
         caller_uid = metagraph.hotkeys.index( synapse.dendrite.hotkey ) # Get the caller index.
         stake = float( metagraph.S[ caller_uid ] ) # Return the stake as the priority.
         bt.logging.info(f"Stake: {stake}")
-        if stake < 10:
+        if stake < 10000:
             bt.logging.trace(f'Blacklisting hotkey {synapse.dendrite.hotkey} without enough stake')
             return True, ""
         return False, ""
